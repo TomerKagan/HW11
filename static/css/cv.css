@@ -1,0 +1,99 @@
+body{
+    height: 100vh;
+    margin: 0;
+    width: 100%
+}
+
+.hobbies{
+    color: blueviolet;
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+header{
+    background-color: bisque;
+    text-align: center;
+    padding:1px;
+    color: cadetblue;
+    font-size: 25px;
+    height: 20vh;
+}
+
+nav {
+    float: left;
+    width: 30%;
+    background: cadetblue;
+    /* padding: 20px; */
+    height: 70vh;
+  }
+
+  p{
+      margin: 0
+  }
+
+  footer{
+      background-color: bisque;
+      height: 9vh;
+      text-align: center;
+      padding: 5px;
+  }
+  
+  div{
+      width: 70%;
+      float: left;
+      height: 70vh;
+  }
+
+  @media (max-width: 880px) {
+    nav, div {
+      width: 100%;
+      height: 35vh;
+    }
+  }
+
+  @keyframes changingBackgroundColor {
+    from {background-color: rgb(255, 0, 179);}
+    to {background-color: rgb(0, 255, 213);}
+  }
+  
+  #tomer{
+    color: pink;
+    animation-name: changingBackgroundColor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite ;
+  }
+
+  #cvForm{
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  .search{
+      width: 40%;
+      padding: 65px;
+  }
+
+  .assigment-9{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+  }
+
+  .registration{
+      width: 60%;
+      padding-top:65px;
+  }
+
+  .header-with-session{
+      display: flex;
+      flex-direction: row;
+  }
+
+  .padding-header{
+      padding-left: 45px;
+      color: black;
+  }

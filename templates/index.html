@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <nav>
+      <ul>
+        <li><p>Mail: kagantom@post.bgu.ac.il</p></li>
+        <li><p>Phone Number: 0527800044</p>
+          <li><p>Address: Metsada 14, Be'er Sheva</p></li>
+          <li><a href="/assignment8">Watch My Hobbies</a></li>
+          <li><a href="/assignment9">Search and Register</a></li>
+          <li><a href="/assignment10">Manage Users</a></li>
+      </ul>
+    </nav>
+
+    <div id="tomer">
+
+      <form onsubmit="return validateForm()" name="cvForm" id="cvForm">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+        <p>Choose your favorite Web language:</p>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label></br></br>
+        <input type="submit" value="Submit">
+
+      </form>
+    </div>
+  </section>
+  <footer>Thanks, Tomer Kagan</footer>
+{% endblock %}

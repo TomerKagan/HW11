@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <script src="../../static/js/assignment11.js"></script>
+        <h2>Req - Fronted (FETCH) </h2>
+        <form action="javascript:getUsers()" method="post">
+              <input required type="number" id="id" placeholder="id">
+              <input type="submit" value="Search">
+        </form>
+        <users>
+        </users>
+
+
+        <h2>Req Backend - REQUESTS</h2>
+        <form action="/get_user">
+            <input type="number" name="id" placeholder="id">
+            <input type="submit" value="Search">
+        </form>
+        {% if User %}
+          <h3> First Name: {{ User.data.first_name }}</h3>
+          <h3> Last Name: {{ User.data.last_name }}</h3>
+          <h3> Email: {{ User.data.email }}</h3>
+          <a href="mailto:${User.data.email}">Send Email - {{User.data.email}}</a>
+        {% endif %}
+        <br><br><br>
+
+    <a href="/">Back Home</a>
+    </div>
+{% endblock %}

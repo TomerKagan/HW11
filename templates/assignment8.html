@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {{ super() }}
+
+    <h1 class="hobbies">Tomer's Hobbies</h1>
+
+    <div>
+        <h4>My {{ hobbies| length }} Hobbies:</h4>
+    <ul>
+        {% for hobby in hobbies %}
+            <li>{{ hobby }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if fav_hobby %}
+        <h2>My fav hobby is {{ fav_hobby }}</h2>
+    {% else %}
+        <h3>You will never know what is my favorite hobby</h3>
+    {% endif %}
+
+    <a href="/">Back Home</a>
+    </div>
+{% endblock %}

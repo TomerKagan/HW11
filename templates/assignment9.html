@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="/">Back Home</a>
+    <div class="assigment-9">
+        <div class="search">
+            <h1>Search Form</h1>
+            <form action="/assignment9" method="get">
+                Enter the user's name : <input name="user_name" type="text" >
+            <input type="submit" value="search">
+            </form>
+            </br>
+            {% if user %}
+                <h4> This is the user you searched for:</h4>
+                <p>Name: {{ user.name }}</p>
+                <p>Email: {{ user.email }}</p>
+            {% else %}
+                {% if searched %}
+                    <h3>Not Found</h3>
+                {% else %}
+                    <h3>Users:</h3>
+                    {% for u in dic_users %}
+                        <h4>{{ u }}</h4>
+                        <p> Name: {{ dic_users[u].name }}, Email: {{ dic_users[u].email }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="registration">
+            {% if session.username %}
+                <h1> Hello, {{ session.username }} </h1>
+                <form action="/assignment9" method="POST">
+                    <input name="log_out"  type="submit" value="log-out">
+                </form>
+            {% else %}
+                 <form action="/assignment9" method="POST">
+                    <h1>Registration</h1>
+                    Username : <input name="username" type="text" ></br></br>
+                    Password:<input name="password"  type="text"></br></br>
+                     Name : <input name="name" type="text" ></br></br>
+                     Email: <input name="email" type="text" ></br></br>
+                    <input type="submit" value="Register">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

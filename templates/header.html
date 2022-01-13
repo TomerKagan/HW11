@@ -1,0 +1,18 @@
+<header>
+{#    <h2>Send CV for a new job at {{ personalDetails.first_name | capitalize}}'s startup</h2>#}
+    <span class="header-with-session">
+        <h2>Send CV for a new job at Tomer's startup</h2>
+
+        {%  if session.username  %}
+            <h2 class="padding-header"> Hello, {{ session.username }} </h2>
+        {% else %}
+            <h2 class="padding-header"> Hello guest </h2>
+        {% endif %}
+
+         {% if session.username %}
+            <a href="/logout" class="padding-header">LogOut</a>
+        {% else %}
+            <a href="/login" class="padding-header">LogIn</a>
+        {% endif %}
+    </span>
+</header>

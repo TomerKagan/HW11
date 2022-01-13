@@ -1,0 +1,12 @@
+ <h2>Delete a user:</h2>
+<ul>
+{% for user in users %}
+    <li>
+       <form action="/Delete_user", method="post">
+           <input type="hidden" name="username" value="{{ user.username }}">
+           <input type="submit" value="delete">
+       </form>
+        <p>username: {{ user.username }}, name: {{ user.name }}</p>
+    </li>
+{% endfor %}
+</ul>
