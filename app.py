@@ -107,6 +107,26 @@ def get_user():
     user = get_user_api(id_num)
     return render_template('assignment11/outer_source.html', User=user)
 
+#For this assigment (12), I changed the db columns so the primary key will be user_id - int type
+@app.route('/assignment12/restapi_users', defaults={'user_id': 1})
+@app.route('/assignment12/restapi_users/<int:user_id>')
+def get_users_assignment(user_id):
+    query = 'select * from users where id=%s;' % user_id
+    users = db_access(query=query, query_type='fetch')
+    if len(users) == 0:
+        res = {
+            'status': '404',
+            'message': 'User Not Found'
+        }
+    else:
+        res = {
+            'status': '200',
+            f'id': users[0].id,
+            'name': users[0].name,
+            'email': users[0].email,
+        }
+    return jsonify(res)
+
 
 @app.route('/assignment11')
 def red_assignment():
